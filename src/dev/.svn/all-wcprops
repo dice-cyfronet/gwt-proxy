@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/38/trunk/src/dev
+END
+StartGAEDevServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/33/trunk/src/dev/StartGAEDevServer.java
+END
+StartDevAppServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/38/trunk/src/dev/StartDevAppServer.java
+END
+Compile.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/33/trunk/src/dev/Compile.java
+END

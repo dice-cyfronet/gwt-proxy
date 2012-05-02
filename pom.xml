@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gdevelop.gwt</groupId>
+  <artifactId>sync-proxy</artifactId>
+  <version>0.3.1-SNAPSHOT</version>
+  
+  <properties>
+  	<gwt.version>2.3.0</gwt.version>
+  </properties>
+  
+  <repositories>
+  	<repository>
+			<id>codehaus</id>
+			<url>http://repository.codehaus.org</url>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>dev-gs-mvnrepo</id>
+			<name>dev-gs mvn repo</name>
+			<url>http://dev-gs.cyfronet.pl/mvnrepo</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>gae</id>
+			<url>http://maven-gae-plugin.googlecode.com/svn/repository</url>
+		</repository>
+  </repositories>
+  
+  <build>
+  <sourceDirectory>src</sourceDirectory>
+  	<!-- <testSourceDirectory>test</testSourceDirectory> -->
+  	<plugins>
+  		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <configuration>
+		        <source>1.6</source>
+		        <target>1.6</target>
+		    </configuration>
+		</plugin>
+		
+  	</plugins>
+  </build>
+  
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.google.gdata</groupId>
+			<artifactId>gdata-core</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8</version>
+		</dependency>
+		<dependency>
+                        <groupId>com.googlecode.gwt-test-utils</groupId>
+                        <artifactId>gwt-test-utils</artifactId>
+                        <version>0.38</version>
+                        <scope>test</scope>
+                </dependency>
+
+
+
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-tools-api</artifactId>
+			<version>1.3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+  </dependencies>
+  
+</project>
