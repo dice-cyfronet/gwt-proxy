@@ -33,6 +33,8 @@ import java.io.OutputStreamWriter;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
+import java.net.CookieStore;
+import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -149,6 +151,16 @@ public class RemoteServiceSyncProxy implements SerializationStreamFactory{
       connection.setRequestProperty(RpcRequestBuilder.MODULE_BASE_HEADER, moduleBaseURL);
       connection.setRequestProperty("Content-Type", "text/x-gwt-rpc; charset=utf-8");
       connection.setRequestProperty("Content-Length", "" + requestData.getBytes("UTF-8").length);
+      
+      CookieStore store = cookieManager.getCookieStore();
+      String cookiesStr = "";
+
+      for(HttpCookie cookie : store.getCookies()) {    	  
+    	  if(!"".equals(cookiesStr)) cookiesStr += "; "; 
+    	  cookiesStr += cookie.getName() +"="+ cookie.getValue();
+      }
+
+      connection.setRequestProperty("Cookie", cookiesStr);
       
       OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
       writer.write(requestData);
